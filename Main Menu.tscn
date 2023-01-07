@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Main Menu button.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Start Game" type="Button" parent="."]
+margin_left = 316.0
+margin_top = 202.0
+margin_right = 586.0
+margin_bottom = 328.0
+text = "play"
+script = ExtResource( 1 )
+nextScenePath = "res://Tutorial.tscn"
+
+[connection signal="pressed" from="Start Game" to="Start Game" method="_on_Start_Game_pressed"]
