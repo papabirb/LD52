@@ -20,5 +20,4 @@ func _on_Area2D_body_entered(body):
 	if body.name == "Grammy":
 		#Animation?
 		#SFX?
-		GrammyHandler.score += 1
-		body.despawn_grammy()
+		body.despawn_grammy_with_scoring()

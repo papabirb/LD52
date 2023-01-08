@@ -16,7 +16,9 @@ collision_layer = 3
 collision_mask = 3
 mass = 0.01
 physics_material_override = SubResource( 2 )
-gravity_scale = 15.0
+gravity_scale = 10.0
+contacts_reported = 2
+contact_monitor = true
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -29,4 +31,8 @@ shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = "Voice"
+
+[connection signal="body_entered" from="." to="." method="_on_Grammy_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

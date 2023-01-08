@@ -40,22 +40,7 @@ shape = SubResource( 2 )
 [node name="Pupas" type="Node2D" parent="."]
 
 [node name="GrammyPupa" parent="Pupas" instance=ExtResource( 1 )]
-position = Vector2( 41, 59 )
-
-[node name="GrammyPupa2" parent="Pupas" instance=ExtResource( 1 )]
-position = Vector2( 308, 58 )
-
-[node name="GrammyPupa4" parent="Pupas" instance=ExtResource( 1 )]
 position = Vector2( 441, 59 )
-
-[node name="GrammyPupa5" parent="Pupas" instance=ExtResource( 1 )]
-position = Vector2( 575, 59 )
-
-[node name="GrammyPupa6" parent="Pupas" instance=ExtResource( 1 )]
-position = Vector2( 706, 59 )
-
-[node name="GrammyPupa3" parent="Pupas" instance=ExtResource( 1 )]
-position = Vector2( 169, 59 )
 
 [node name="GrammyWiggler" parent="." instance=ExtResource( 2 )]
 position = Vector2( 876, 235 )

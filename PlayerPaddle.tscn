@@ -2,17 +2,17 @@
 
 [ext_resource path="res://paddle placeholder or final maybe.png" type="Texture" id=1]
 [ext_resource path="res://PlayerPaddle.gd" type="Script" id=2]
-
-[sub_resource type="PhysicsMaterial" id=1]
-friction = 0.0
+[ext_resource path="res://ace throat doink.wav" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 55.0
 height = 70.0
 
-[node name="PlayerPaddle" type="StaticBody2D"]
-constant_linear_velocity = Vector2( 0, -150 )
-physics_material_override = SubResource( 1 )
+[node name="PlayerPaddle" type="RigidBody2D"]
+mode = 3
+gravity_scale = 0.0
+contacts_reported = 5
+contact_monitor = true
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -22,3 +22,9 @@ texture = ExtResource( 1 )
 position = Vector2( 1, 0 )
 rotation = 1.5708
 shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_PlayerPaddle_body_entered"]
