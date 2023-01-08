@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://GrammyPupa.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GrammyWiggler.tscn" type="PackedScene" id=2]
 [ext_resource path="res://PlayerPaddle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://bg placeholder.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 277 )
@@ -11,6 +12,10 @@ extents = Vector2( 10, 277 )
 extents = Vector2( 489, 10 )
 
 [node name="Node2D" type="Node2D"]
+
+[node name="bg" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
 
 [node name="Borders" type="Node2D" parent="."]
 

@@ -14,6 +14,10 @@ config/name="Ld 52"
 run/main_scene="res://Main Menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GrammyHandler="*res://GrammyHandler.gd"
+
 [display]
 
 window/size/width=948
