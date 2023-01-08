@@ -18,7 +18,6 @@ func _process(delta):
 
 
 func _on_PlayerPaddle_body_entered(body):
-	print("hewwo?")
 	if body.name == "Grammy":
 		$AudioStreamPlayer.pitch_scale = rand_range(0.25,1.75)
 		$AudioStreamPlayer.play()
