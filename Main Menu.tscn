@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Main Menu button.gd" type="Script" id=1]
 [ext_resource path="res://menu placeholder.png" type="Texture" id=2]
 [ext_resource path="res://arial.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://ArialFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Fullscreen Button.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -36,5 +37,7 @@ custom_fonts/font = SubResource( 1 )
 text = "My New Job as a Grammy Bouncer at the Local GramCo Sugar Factory?!"
 align = 1
 autowrap = true
+
+[node name="Fullscreen Button" parent="." instance=ExtResource( 5 )]
 
 [connection signal="pressed" from="Start Game" to="Start Game" method="_on_Start_Game_pressed"]

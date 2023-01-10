@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fullscreen Button.gd" type="Script" id=1]
+[ext_resource path="res://arial.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Fullscreen Button" type="Button"]
+margin_left = 708.0
+margin_top = 399.0
+margin_right = 877.0
+margin_bottom = 446.0
+custom_fonts/font = SubResource( 2 )
+text = "fullscreen"
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="." to="." method="_on_Fullscreen_Button_pressed"]
