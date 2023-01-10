@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GrammyHandler="*res://GrammyHandler.gd"
+MusicController="*res://MusicController.tscn"
 
 [display]
 

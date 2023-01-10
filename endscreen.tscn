@@ -1,9 +1,46 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://black bg.png" type="Texture" id=1]
+[ext_resource path="res://EndScreenButton.gd" type="Script" id=2]
+[ext_resource path="res://BetweenLevelLabel.gd" type="Script" id=3]
+[ext_resource path="res://arial.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://ArialFont.tres" type="DynamicFont" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
 
 [node name="endscreen" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
+
+[node name="Label" type="Label" parent="."]
+margin_right = 944.0
+margin_bottom = 278.0
+custom_fonts/font = SubResource( 1 )
+text = "Yikes, only xx% yield..."
+align = 1
+valign = 1
+script = ExtResource( 3 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_left = 2.0
+margin_top = 208.0
+margin_right = 948.0
+margin_bottom = 538.0
+
+[node name="Button" type="Button" parent="CenterContainer"]
+pause_mode = 2
+margin_left = 270.0
+margin_top = 147.0
+margin_right = 675.0
+margin_bottom = 183.0
+custom_fonts/font = ExtResource( 5 )
+text = "Do better next time, or you're fired!"
+script = ExtResource( 2 )
+
+[connection signal="pressed" from="CenterContainer/Button" to="CenterContainer/Button" method="_on_Button_pressed"]

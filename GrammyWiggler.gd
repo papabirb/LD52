@@ -1,9 +1,7 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var sugar = preload("res://GrammySugar.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,3 +19,10 @@ func _on_Area2D_body_entered(body):
 		#Animation?
 		#SFX?
 		body.despawn_grammy_with_scoring()
+		$AudioStreamPlayer.pitch_scale = rand_range(0.85, 1.15)
+		$AudioStreamPlayer.play()
+		GrammyHandler.currentlyMulchingGrammy = true
+		yield($AudioStreamPlayer, "finished")
+		var newSugar = sugar.instance()
+		newSugar.position = $Position2D.position
+		add_child(newSugar)

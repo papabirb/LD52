@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://GrammyPupa.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GrammyWiggler.tscn" type="PackedScene" id=2]
 [ext_resource path="res://PlayerPaddle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://bg placeholder.png" type="Texture" id=4]
+[ext_resource path="res://Expected Score.gd" type="Script" id=5]
+[ext_resource path="res://Current Score.gd" type="Script" id=6]
+[ext_resource path="res://ArialFont.tres" type="DynamicFont" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 277 )
@@ -34,7 +37,7 @@ shape = SubResource( 1 )
 [node name="WallCeiling3" type="StaticBody2D" parent="Borders"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/WallCeiling3"]
-position = Vector2( 475, -10 )
+position = Vector2( 472, -9 )
 shape = SubResource( 2 )
 
 [node name="Pupas" type="Node2D" parent="."]
@@ -47,3 +50,32 @@ position = Vector2( 876, 235 )
 
 [node name="PlayerPaddle" parent="." instance=ExtResource( 3 )]
 position = Vector2( 110, 467 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 0.952
+anchor_right = 0.954
+margin_left = -231.496
+margin_top = 24.0
+margin_right = 19.608
+margin_bottom = 113.0
+
+[node name="Current Score" type="Label" parent="CanvasLayer/VBoxContainer"]
+margin_right = 253.0
+margin_bottom = 30.0
+custom_fonts/font = ExtResource( 7 )
+text = "Current Yield: 69%"
+align = 2
+valign = 1
+script = ExtResource( 6 )
+
+[node name="Expected Score" type="Label" parent="CanvasLayer/VBoxContainer"]
+margin_top = 34.0
+margin_right = 253.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 7 )
+text = "Yield Demanded: 69%"
+align = 2
+valign = 1
+script = ExtResource( 5 )

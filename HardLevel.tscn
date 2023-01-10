@@ -1,0 +1,105 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://ArialFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://GrammyPupa.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GrammyWiggler.tscn" type="PackedScene" id=3]
+[ext_resource path="res://PlayerPaddle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Expected Score.gd" type="Script" id=5]
+[ext_resource path="res://Current Score.gd" type="Script" id=6]
+[ext_resource path="res://bg placeholder.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 277 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 489, 10 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="bg" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="WallCeiling" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/WallCeiling"]
+position = Vector2( -6, 267 )
+shape = SubResource( 1 )
+
+[node name="WallCeiling2" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/WallCeiling2"]
+position = Vector2( 959, 270 )
+shape = SubResource( 1 )
+
+[node name="WallCeiling3" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/WallCeiling3"]
+position = Vector2( 472, -9 )
+shape = SubResource( 2 )
+
+[node name="Pupas" type="Node2D" parent="."]
+
+[node name="GrammyPupa" parent="Pupas" instance=ExtResource( 2 )]
+position = Vector2( 275, 59 )
+
+[node name="GrammyPupa5" parent="Pupas" instance=ExtResource( 2 )]
+position = Vector2( 198, 59 )
+
+[node name="GrammyPupa3" parent="Pupas" instance=ExtResource( 2 )]
+position = Vector2( 430, 59 )
+
+[node name="GrammyPupa7" parent="Pupas" instance=ExtResource( 2 )]
+position = Vector2( 505, 59 )
+
+[node name="GrammyPupa8" parent="Pupas" instance=ExtResource( 2 )]
+position = Vector2( 570, 59 )
+
+[node name="GrammyPupa9" parent="Pupas" instance=ExtResource( 2 )]
+position = Vector2( 638, 60 )
+
+[node name="GrammyPupa6" parent="Pupas" instance=ExtResource( 2 )]
+position = Vector2( 354, 59 )
+
+[node name="GrammyPupa2" parent="Pupas" instance=ExtResource( 2 )]
+position = Vector2( 122, 58 )
+
+[node name="GrammyPupa4" parent="Pupas" instance=ExtResource( 2 )]
+position = Vector2( 48, 59 )
+
+[node name="GrammyWiggler" parent="." instance=ExtResource( 3 )]
+position = Vector2( 876, 235 )
+
+[node name="PlayerPaddle" parent="." instance=ExtResource( 4 )]
+position = Vector2( 110, 467 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 0.952
+anchor_right = 0.954
+margin_left = -231.496
+margin_top = 24.0
+margin_right = 19.608
+margin_bottom = 113.0
+
+[node name="Current Score" type="Label" parent="CanvasLayer/VBoxContainer"]
+margin_right = 253.0
+margin_bottom = 30.0
+custom_fonts/font = ExtResource( 1 )
+text = "Current Yield: 69%"
+align = 2
+valign = 1
+script = ExtResource( 6 )
+
+[node name="Expected Score" type="Label" parent="CanvasLayer/VBoxContainer"]
+margin_top = 34.0
+margin_right = 253.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 1 )
+text = "Yield Demanded: 69%"
+align = 2
+valign = 1
+script = ExtResource( 5 )

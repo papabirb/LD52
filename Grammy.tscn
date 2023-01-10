@@ -1,7 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://grammy placeholder.png" type="Texture" id=1]
 [ext_resource path="res://Grammy.gd" type="Script" id=2]
+[ext_resource path="res://grammy_bounce_2.wav" type="AudioStream" id=3]
+[ext_resource path="res://bone crunch 4.wav" type="AudioStream" id=4]
+[ext_resource path="res://grammy_bounce_4.wav" type="AudioStream" id=5]
+[ext_resource path="res://grammy_die_1.wav" type="AudioStream" id=6]
+[ext_resource path="res://grammy_die_2.wav" type="AudioStream" id=7]
+[ext_resource path="res://bone crunch 1.wav" type="AudioStream" id=8]
+[ext_resource path="res://bone crunch 3.wav" type="AudioStream" id=9]
+[ext_resource path="res://grammy_bounce_5.wav" type="AudioStream" id=10]
+[ext_resource path="res://bone crunch 5.wav" type="AudioStream" id=11]
+[ext_resource path="res://grammy_bounce_6.wav" type="AudioStream" id=12]
+[ext_resource path="res://grammy_bounce_3.wav" type="AudioStream" id=13]
+[ext_resource path="res://grammy_bounce_1.wav" type="AudioStream" id=14]
+[ext_resource path="res://grammy_die_3.wav" type="AudioStream" id=15]
+[ext_resource path="res://bone crunch 2.wav" type="AudioStream" id=16]
 
 [sub_resource type="PhysicsMaterial" id=2]
 friction = 0.0
@@ -20,6 +34,9 @@ gravity_scale = 10.0
 contacts_reported = 2
 contact_monitor = true
 script = ExtResource( 2 )
+boneCrunch = [ ExtResource( 8 ), ExtResource( 16 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 11 ) ]
+grannyBounce = [ ExtResource( 14 ), ExtResource( 3 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 12 ) ]
+grannyDie = [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 15 ) ]
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.2, -0.2 )
@@ -31,7 +48,11 @@ shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BoneCrunch" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
+
+[node name="VoiceLines" type="AudioStreamPlayer" parent="."]
+volume_db = 7.0
 bus = "Voice"
 
 [connection signal="body_entered" from="." to="." method="_on_Grammy_body_entered"]
